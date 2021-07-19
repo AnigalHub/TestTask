@@ -15,23 +15,22 @@
             </b-col>
           </b-row>
         </b-form>
-        <b-overlay  class="w-100 h-100">
-          <b-table :fields="fields" >
-           <!-- <template #cell(name)='{item}'>
-              <div><span>bb</span></div>
-              <div>90</div>
+      <b-overlay :show="isLoading" class="w-100 h-100">
+          <b-table :fields="fields" :items="itemsList">
+           <template #cell(name)='{item}'>
+              <div>{{item.name}}</div>
             </template>
             <template #cell(amount)='{item}'>
-              <b-checkbox>9</b-checkbox>
+              <input :placeholder=item.number>
             </template>
             <template #cell(storage)='{item}'>
-              <b-button variant="danger">X</b-button>
+              <div>{{item.storage}}</div>
             </template>
             <template #cell(year)='{item}'>
-              <b-button variant="danger">X</b-button>
-            </template> -->
+              <input :placeholder=item.year>
+            </template>
           </b-table>
-        </b-overlay>
+      </b-overlay>
     </b-container>
   </div>
 </template>
@@ -43,6 +42,7 @@ export default {
   components: {},
   data(){
     return{
+      isLoading: false,
       /**Столбцы таблицы */
       fields:[
         { key: "name", label: "Название" },
@@ -50,6 +50,10 @@ export default {
         { key: "storage", label: "Место хранения" },
         { key: "year", label: "Срок годности" },
       ],
+      /**Список TODO */
+      itemsList: [
+        {name:"Аконит 3",number:"1",storage:"желтая коробочка",year:"2021"}
+      ]
     }
   },
 }
@@ -92,6 +96,15 @@ export default {
   }
   .input-group-text,.form-control {
     border: 1px solid #198754 !important;
+  }
+  th,tr{
+    text-align: center !important;
+  }
+  tr td:first-child{
+    text-align: left !important;
+  }
+  table input{
+    width: 45px;
   }
 
 </style>
