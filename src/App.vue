@@ -15,6 +15,7 @@
             </b-col>
           </b-row>
         </b-form>
+        <b-button type="submit" variant="success" @click="onShow">Показать</b-button>
       <b-overlay :show="isLoading" class="w-100 h-100">
           <b-table :fields="fields" :items="itemsList">
            <template #cell(name)='{item}'>
@@ -36,6 +37,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 
 export default {
   name: 'App',
@@ -52,10 +54,20 @@ export default {
       ],
       /**Список TODO */
       itemsList: [
-        {name:"Аконит 3",number:"1",storage:"желтая коробочка",year:"2021"}
       ]
     }
   },
+  methods:{
+      async onShow(){
+          try{
+              const response = await axios.get('http://127.0.0.1:8888/api/')
+              this.itemsList = response.data
+          }
+          catch (error) {
+             console.log(error)
+          }
+      }
+  }
 }
 </script>
 
@@ -65,7 +77,7 @@ export default {
     padding: 0 !important;
   }
   #app {
-    height: 100vh;
+    min-height: 100vh;
     margin: 0 !important;
     padding: 4vh !important;
     background: honeydew;
