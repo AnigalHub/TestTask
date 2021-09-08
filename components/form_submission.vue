@@ -7,7 +7,7 @@
     <label>Ссылка на изображение товара<component :is="point"/></label>
     <input type="url" name="link" required placeholder="Введите ссылку">
     <label>Цена товара<component :is="point"/></label>
-    <input type="text" required placeholder="Введите цену">
+    <input type="text" required placeholder="Введите цену"  v-mask="'## ###'" v-model="inputPriceModel">
     <button disabled type="submit">Добавить товар</button>
   </form>
 </template>
@@ -19,6 +19,7 @@
       data() {
         return {
           point: pointSVG,
+          inputPriceModel: '',
         }
       }
     }
