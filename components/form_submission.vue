@@ -1,27 +1,43 @@
 <template>
   <form>
     <label>Наименование товара<component :is="point"/></label>
-    <input type="text" name="name" required placeholder="Введите наименование товара">
+    <input type="text" name="name" required placeholder="Введите наименование товара" v-model="inputNameModel">
     <label>Описание товара</label>
-    <textarea type="text" name="description" placeholder="Введите описание товара"></textarea>
+    <textarea type="text" name="description" placeholder="Введите описание товара" v-model="inputDescriptionModel"></textarea>
     <label>Ссылка на изображение товара<component :is="point"/></label>
-    <input type="url" name="link" required placeholder="Введите ссылку">
+    <input name="link" required placeholder="Введите ссылку" v-model="inputUrlModel">
     <label>Цена товара<component :is="point"/></label>
-    <input type="text" required placeholder="Введите цену"  v-mask="'## ###'" v-model="inputPriceModel">
-    <button disabled type="submit">Добавить товар</button>
+    <the-mask type="text" required  placeholder="Введите цену" :mask="['# ###', '## ###', '### ###']" v-model="inputPriceModel"/>
+    <button type="submit" :disabled="buttonDisabled" >Добавить товар</button>
   </form>
 </template>
 
 <script>
     import pointSVG from "~/components/svg/point";
+    import {mask} from 'vue-the-mask'
     export default {
+      directives: {mask},
       name: "form_submission",
       data() {
         return {
           point: pointSVG,
-          inputPriceModel: '',
+          errors: [],
+          inputNameModel: null,
+          inputDescriptionModel: null,
+          inputUrlModel:null,
+          inputPriceModel: null,
         }
-      }
+      },
+      computed:{
+        buttonDisabled(){
+          if (this.inputNameModel && this.inputUrlModel && this.inputPriceModel) {
+            return false;
+          }
+          else{
+            return true;
+          }
+        }
+      },
     }
 </script>
 
