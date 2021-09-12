@@ -1,4 +1,4 @@
-gi<template>
+<template>
    <div>
      <div class="background">
        <div class="flex-container">
@@ -19,6 +19,9 @@ import Form_submission from "~/components/form_submission";
 import Products from "~/components/products";
 export default {
   components: {Products, Form_submission, Sorting},
+  created: function () {
+    this.$store.dispatch('catalogStore/refreshSavedState')
+  }
 
 }
 </script>
