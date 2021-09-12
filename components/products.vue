@@ -1,12 +1,14 @@
 <template>
   <div id="products">
     <div class="product" v-for="product in Products" :key="product.index">
-      <component class="basket" :is="basket"/>
-      <img :src="product.img_src" :alt="product.img_alt">
+      <div  class="basket"  @click="deleteToProducts(index)">
+        <component :is="basket"/>
+      </div>
+      <img :src="product.img_src">
       <div class="text_product">
         <p class="name_product">{{product.name_product}}</p>
         <p class="description_product">{{product.description_product}}</p>
-        <p class="price_product">{{product.price_product}}</p>
+        <p class="price_product" :mask="['# ###', '## ###', '### ###']">{{product.price_product}}</p>
       </div>
     </div>
   </div>
@@ -19,22 +21,22 @@
       data() {
         return {
           basket: BasketSVG,
-          Products:[
-            {img_src:"./img.jpg", img_alt:"продукт", name_product:"Наименование товара", price_product:"10 000 руб.", description_product:"Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк", },
-            {img_src:"./img.jpg", img_alt:"продукт", name_product:"Наименование товара", price_product:"10 000 руб.", description_product:"Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк", },
-            {img_src:"./img.jpg", img_alt:"продукт", name_product:"Наименование товара", price_product:"10 000 руб.", description_product:"Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк", },
-            {img_src:"./img.jpg", img_alt:"продукт", name_product:"Наименование товара", price_product:"10 000 руб.", description_product:"Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк", },
-            {img_src:"./img.jpg", img_alt:"продукт", name_product:"Наименование товара", price_product:"10 000 руб.", description_product:"Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк", },
-            {img_src:"./img.jpg", img_alt:"продукт", name_product:"Наименование товара", price_product:"10 000 руб.", description_product:"Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк", },
-            {img_src:"./img.jpg", img_alt:"продукт", name_product:"Наименование товара", price_product:"10 000 руб.", description_product:"Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк", },
-            {img_src:"./img.jpg", img_alt:"продукт", name_product:"Наименование товара", price_product:"10 000 руб.", description_product:"Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк", },
-            {img_src:"./img.jpg", img_alt:"продукт", name_product:"Наименование товара", price_product:"10 000 руб.", description_product:"Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк", },
-            {img_src:"./img.jpg", img_alt:"продукт", name_product:"Наименование товара", price_product:"10 000 руб.", description_product:"Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк", },
-            {img_src:"./img.jpg", img_alt:"продукт", name_product:"Наименование товара", price_product:"10 000 руб.", description_product:"Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк", },
-            {img_src:"./img.jpg", img_alt:"продукт", name_product:"Наименование товара", price_product:"10 000 руб.", description_product:"Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк", },
-          ]
+         // Products:[
+           // {id:1,img_src:"./img.jpg", name_product:"Наименование товара", price_product:"10 000 руб.", description_product:"Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк", },
+          //  {id:1,img_src:"./img.jpg", name_product:"Наименование товара", price_product:"10 000 руб.", description_product:"Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк", },
+          //]
         }
-      }
+      },
+      computed:{
+        Products: function () {
+          return this.$store.getters['catalogStore/Products']
+        }
+      },
+      methods:{
+        deleteToProducts:function (index) {
+          this.$store.dispatch('catalogStore/deleteProductState',index)
+        },
+      },
     }
 </script>
 
@@ -73,13 +75,16 @@
         .name_product{
           font-size: 20px;
           line-height: 25px;
+          height: 25px;
         }
         .description_product{
           padding-top: 16px;
           font-size: 16px;
           line-height: 20px;
+          height: 80px;
         }
         .price_product{
+          height: 30px;
           padding-top: 32px;
           font-size: 24px;
           line-height: 30px;
