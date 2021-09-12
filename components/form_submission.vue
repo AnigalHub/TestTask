@@ -1,43 +1,58 @@
 <template>
-  <form>
-    <label>Наименование товара<component :is="point"/></label>
-    <input type="text" name="name" required placeholder="Введите наименование товара" v-model="inputNameModel">
-    <label>Описание товара</label>
-    <textarea type="text" name="description" placeholder="Введите описание товара" v-model="inputDescriptionModel"></textarea>
-    <label>Ссылка на изображение товара<component :is="point"/></label>
-    <input name="link" required placeholder="Введите ссылку" v-model="inputUrlModel">
-    <label>Цена товара<component :is="point"/></label>
-    <the-mask type="text" required  placeholder="Введите цену" :mask="['# ###', '## ###', '### ###']" v-model="inputPriceModel"/>
-    <button type="submit" :disabled="buttonDisabled" >Добавить товар</button>
-  </form>
+  <div>
+    <form>
+      <div>
+        <label>Наименование товара<component :is="point"/></label>
+        <input type="text" name="name" required placeholder="Введите наименование товара" v-model="Product.name_product">
+        <label>Описание товара</label>
+        <textarea type="text" name="description" placeholder="Введите описание товара" v-model="Product.description_product"></textarea>
+        <label>Ссылка на изображение товара<component :is="point"/></label>
+        <input name="link" required placeholder="Введите ссылку" v-model="Product.img_src">
+        <label>Цена товара<component :is="point"/></label>
+        <the-mask type="text" required  placeholder="Введите цену" :mask="['# ###', '## ###', '### ###']" v-model="Product.price_product"/>
+        <button type="submit" :disabled="buttonDisabled" @click="addToProducts(Product)">Добавить товар</button>
+      </div>
+    </form>
+  </div>
+
 </template>
 
 <script>
     import pointSVG from "~/components/svg/point";
-    import {mask} from 'vue-the-mask'
+    import {mask} from 'vue-the-mask';
     export default {
       directives: {mask},
       name: "form_submission",
       data() {
         return {
           point: pointSVG,
-          errors: [],
-          inputNameModel: null,
-          inputDescriptionModel: null,
-          inputUrlModel:null,
-          inputPriceModel: null,
+          Product:{
+            id:1,
+            name_product: '',
+            description_product: '',
+            img_src:'',
+            price_product: '',
+          },
         }
       },
       computed:{
         buttonDisabled(){
-          if (this.inputNameModel && this.inputUrlModel && this.inputPriceModel) {
-            return false;
-          }
-          else{
-            return true;
-          }
+          //if (this.inputNameModel && this.inputUrlModel && this.inputPriceModel) {
+           // return false;
+          //}
+          //else{
+          //  return true;
+         //}
+        },
+        Products: function () {
+          return this.$store.getters['catalogStore/Products']
         }
       },
+      methods:{
+        addToProducts:function (Product) {
+          this.$store.dispatch('catalogStore/addProductState',Product)
+        }
+      }
     }
 </script>
 
