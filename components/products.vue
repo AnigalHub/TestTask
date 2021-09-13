@@ -1,6 +1,6 @@
 <template>
   <div id="products">
-    <div class="product" v-for="product in Products" :key="product.index">
+    <div class="product" v-for="(product,index) in Products" :key="index">
       <div  class="basket"  @click="deleteToProducts(index)">
         <component :is="basket"/>
       </div>
