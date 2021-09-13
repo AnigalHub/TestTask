@@ -27,7 +27,6 @@
         return {
           point: pointSVG,
           Product:{
-            id:1,
             name_product: '',
             description_product: '',
             img_src:'',
