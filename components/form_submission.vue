@@ -3,13 +3,13 @@
     <form>
       <div>
         <label>Наименование товара<component :is="point"/></label>
-        <input type="text" name="name" required placeholder="Введите наименование товара" v-model="Product.name_product">
+        <input type="text" name="name" required placeholder="Введите наименование товара" v-model="Product.nameProduct">
         <label>Описание товара</label>
-        <textarea type="text" name="description" placeholder="Введите описание товара" v-model="Product.description_product"></textarea>
+        <textarea type="text" name="description" placeholder="Введите описание товара" v-model="Product.descriptionProduct"></textarea>
         <label>Ссылка на изображение товара<component :is="point"/></label>
-        <input name="link" required placeholder="Введите ссылку" v-model="Product.img_src">
+        <input name="link" required placeholder="Введите ссылку" v-model="Product.imgSrc">
         <label>Цена товара<component :is="point"/></label>
-        <the-mask type="text" required  placeholder="Введите цену" :mask="['# ###', '## ###', '### ###']" v-model="Product.price_product"/>
+        <the-mask type="text" required  placeholder="Введите цену" :mask="['# ###', '## ###', '### ###']" v-model="Product.priceProduct"/>
         <button type="submit" :disabled="buttonDisabled" @click="addToProducts(Product)">Добавить товар</button>
       </div>
     </form>
@@ -27,10 +27,10 @@
         return {
           point: pointSVG,
           Product:{
-            name_product: '',
-            description_product: '',
-            img_src:'',
-            price_product: '',
+            nameProduct: '',
+            descriptionProduct: '',
+            imgSrc:'',
+            priceProduct: '',
           },
         }
       },
@@ -43,9 +43,6 @@
           //  return true;
          //}
         },
-        Products: function () {
-          return this.$store.getters['catalogStore/Products']
-        }
       },
       methods:{
         addToProducts:function (Product) {
