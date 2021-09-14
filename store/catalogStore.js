@@ -35,4 +35,14 @@ export const actions = {
     context.commit('deleteProduct',id)
     localStorage.setItem('product', JSON.stringify(context.getters.Products))
   },
+  SortByName(context){
+    let new_products = context.getters.Products.slice()
+    let comparer = (a,b) => {
+      if(a.nameProduct>b.nameProduct) {return 1}
+      else if (a.nameProduct<b.nameProduct){return -1}
+      else {return 0}
+    }
+    console.log(new_products.sort(comparer))
+    context.commit('setSavedProducts',new_products.sort(comparer))
+  }
 }
