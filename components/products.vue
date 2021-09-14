@@ -4,11 +4,11 @@
       <div  class="basket"  @click="deleteToProducts(index)">
         <component :is="basket"/>
       </div>
-      <img :src="product.img_src">
+      <img :src="product.imgSrc">
       <div class="text_product">
-        <p class="name_product">{{product.name_product}}</p>
-        <p class="description_product">{{product.description_product}}</p>
-        <p class="price_product" :mask="['# ###', '## ###', '### ###']">{{product.price_product}}</p>
+        <p class="name_product">{{product.nameProduct}}</p>
+        <p class="description_product">{{product.descriptionProduct}}</p>
+        <p class="price_product" :mask="['# ###', '## ###', '### ###']">{{product.priceProduct}}</p>
       </div>
     </div>
   </div>
@@ -21,10 +21,6 @@
       data() {
         return {
           basket: BasketSVG,
-         // Products:[
-           // {id:1,img_src:"./img.jpg", name_product:"Наименование товара", price_product:"10 000 руб.", description_product:"Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк", },
-          //  {id:1,img_src:"./img.jpg", name_product:"Наименование товара", price_product:"10 000 руб.", description_product:"Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк", },
-          //]
         }
       },
       computed:{
