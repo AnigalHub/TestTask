@@ -8,17 +8,19 @@
     <div class="dropdown">
       <div class="sort">По цене min</div>
       <div class="sort">По цене max</div>
-      <div class="sort">По наименованию</div>
+      <div class="sort" @click="SortByNameProducts()">По наименованию</div>
     </div>
-
   </div>
-
-
 </template>
 
 <script>
     export default {
-        name: "sorting"
+      name: "sorting",
+      methods:{
+        SortByNameProducts:function () {
+          this.$store.dispatch('catalogStore/SortByName')
+        }
+      }
     }
 </script>
 
@@ -58,6 +60,8 @@
     margin-left: 1008px;
     margin-top: 66px;
     z-index: 1000;
-
+    div{
+      cursor: pointer;
+    }
   }
 </style>
