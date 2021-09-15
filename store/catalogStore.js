@@ -35,14 +35,35 @@ export const actions = {
     context.commit('deleteProduct',id)
     localStorage.setItem('product', JSON.stringify(context.getters.Products))
   },
+
   SortByName(context){
-    let new_products = context.getters.Products.slice()
+    let newProductsName = context.getters.Products.slice()
     let comparer = (a,b) => {
       if(a.nameProduct>b.nameProduct) {return 1}
       else if (a.nameProduct<b.nameProduct){return -1}
       else {return 0}
     }
-    console.log(new_products.sort(comparer))
-    context.commit('setSavedProducts',new_products.sort(comparer))
-  }
+    console.log(newProductsName.sort(comparer))
+    context.commit('setSavedProducts',newProductsName.sort(comparer))
+  },
+  SortByPriceMin(context){
+    let newProductsPriceMin = context.getters.Products.slice()
+    let comparer = (a,b) => {
+      if(a.priceProduct>b.priceProduct) {return 1}
+      else if (a.priceProduct<b.priceProduct){return -1}
+      else {return 0}
+    }
+    console.log(newProductsPriceMin.sort(comparer))
+    context.commit('setSavedProducts',newProductsPriceMin.sort(comparer))
+  },
+  SortByPriceMax(context){
+    let newProductsPriceMax = context.getters.Products.slice()
+    let comparer = (a,b) => {
+      if(a.priceProduct<b.priceProduct) {return 1}
+      else if (a.priceProduct>b.priceProduct){return -1}
+      else {return 0}
+    }
+    console.log(newProductsPriceMax.sort(comparer))
+    context.commit('setSavedProducts',newProductsPriceMax.sort(comparer))
+  },
 }
