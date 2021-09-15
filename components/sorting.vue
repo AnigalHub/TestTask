@@ -1,15 +1,22 @@
 <template>
   <div>
-    <div id="sorting">По умолчанию
+<div id="sorting">По умолчанию
       <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M7.48532 1.24264L4.24268 4.48528L1.00003 1.24264" stroke="#B4B4B4"/>
       </svg>
     </div>
     <div class="dropdown">
-      <div class="sort">По цене min</div>
-      <div class="sort">По цене max</div>
+
+      <div class="sort" @click="SortByPriceMinProducts()">По цене min</div>
+      <div class="sort" @click="SortByPriceMaxProducts()">По цене max</div>
       <div class="sort" @click="SortByNameProducts()">По наименованию</div>
     </div>
+   <!-- <select>
+      <option>По умолчанию</option>
+      <option>По цене min</option>
+      <option>По цене max</option>
+      <option>По наименованию</option>
+    </select> -->
   </div>
 </template>
 
@@ -19,13 +26,19 @@
       methods:{
         SortByNameProducts:function () {
           this.$store.dispatch('catalogStore/SortByName')
-        }
+        },
+        SortByPriceMinProducts:function () {
+          this.$store.dispatch('catalogStore/SortByPriceMin')
+        },
+        SortByPriceMaxProducts:function () {
+          this.$store.dispatch('catalogStore/SortByPriceMax')
+        },
       }
     }
 </script>
 
 <style scoped lang="scss">
-  #sorting{
+  #sorting,select,option{
     float: left;
     width: 121.49px;
     height: 36px;
@@ -33,17 +46,15 @@
     color: #B4B4B4;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
+    border: none;
     margin-top: 31px;
-    margin-right: 31.51px;
     margin-left: 1008px;
-    padding: 10px 16px 11px;
+    padding: 10px 5px 11px 16px;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 12px;
     line-height: 15px;
-    svg{
-      padding-left: 5px;
-    }
   }
+
   .sort{
     width: 121.49px;
     background: #FFFEFB;
