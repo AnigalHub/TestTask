@@ -49,8 +49,8 @@ export const actions = {
   SortByPriceMin(context){
     let newProductsPriceMin = context.getters.Products.slice()
     let comparer = (a,b) => {
-      if(a.priceProduct>b.priceProduct) {return 1}
-      else if (a.priceProduct<b.priceProduct){return -1}
+      if(Number(a.priceProduct)>Number(b.priceProduct)) {return 1}
+      else if (Number(a.priceProduct)<Number(b.priceProduct)){return -1}
       else {return 0}
     }
     console.log(newProductsPriceMin.sort(comparer))
@@ -59,8 +59,8 @@ export const actions = {
   SortByPriceMax(context){
     let newProductsPriceMax = context.getters.Products.slice()
     let comparer = (a,b) => {
-      if(a.priceProduct<b.priceProduct) {return 1}
-      else if (a.priceProduct>b.priceProduct){return -1}
+      if(Number(a.priceProduct)<Number(b.priceProduct)) {return 1}
+      else if (Number(a.priceProduct)>Number(b.priceProduct)){return -1}
       else {return 0}
     }
     console.log(newProductsPriceMax.sort(comparer))
