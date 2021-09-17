@@ -8,7 +8,7 @@
       <div class="text_product">
         <p class="name_product">{{product.nameProduct}}</p>
         <p class="description_product">{{product.descriptionProduct}}</p>
-        <p class="price_product" :mask="['# ###', '## ###', '### ###']">{{product.priceProduct}}</p>
+        <p class="price_product" >{{numberWithSpaces(product.priceProduct)}}</p>
       </div>
     </div>
   </div>
@@ -31,6 +31,9 @@
       methods:{
         deleteToProducts:function (index) {
           this.$store.dispatch('catalogStore/deleteProductState',index)
+        },
+        numberWithSpaces(x) {
+          return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
         },
       },
     }
