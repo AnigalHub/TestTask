@@ -8,7 +8,7 @@
       <div class="text_product">
         <p class="name_product">{{product.nameProduct}}</p>
         <p class="description_product">{{product.descriptionProduct}}</p>
-        <p class="price_product" >{{numberWithSpaces(product.priceProduct)}}</p>
+        <p class="price_product">{{numberWithSpaces(product.priceProduct)}} руб.</p>
       </div>
     </div>
   </div>
