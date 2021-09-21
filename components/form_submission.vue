@@ -36,12 +36,10 @@
       },
       computed:{
         buttonDisabled(){
-          //if (this.inputNameModel && this.inputUrlModel && this.inputPriceModel) {
-           // return false;
-          //}
-          //else{
-          //  return true;
-         //}
+          if (this.Product.nameProduct && this.Product.imgSrc && this.Product.priceProduct) {
+           return false;
+          }
+           return true;
         },
       },
       methods:{
