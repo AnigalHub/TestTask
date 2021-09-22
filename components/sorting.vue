@@ -28,7 +28,7 @@
       methods:{
         SortByNameProducts:function () {
           this.$store.dispatch('catalogStore/SortByName')
-          this.sort = "По наименованию"
+          this.sort = "По наименова..."
         },
         SortByPriceMinProducts:function () {
           this.$store.dispatch('catalogStore/SortByPriceMin')
