@@ -72,11 +72,14 @@
       .text_product{
         padding: 16px 16px 0;
         .name_product{
+          word-wrap:break-word;
           font-size: 20px;
           line-height: 25px;
           height: 25px;
         }
         .description_product{
+          word-wrap:break-word;
+          overflow: auto;
           padding-top: 16px;
           font-size: 16px;
           line-height: 20px;
