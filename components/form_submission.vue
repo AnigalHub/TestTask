@@ -1,15 +1,16 @@
 <template>
   <div>
-    <form>
+    <form method="post">
       <div>
         <label>Наименование товара<component :is="point"/></label>
         <input type="text" name="name" required placeholder="Введите наименование товара" v-model="Product.nameProduct">
         <label>Описание товара</label>
         <textarea type="text" name="description" placeholder="Введите описание товара" v-model="Product.descriptionProduct"></textarea>
         <label>Ссылка на изображение товара<component :is="point"/></label>
-        <input name="link" required placeholder="Введите ссылку" v-model="Product.imgSrc">
+        <input name="link" type="url" required placeholder="Введите ссылку" v-model="Product.imgSrc">
         <label>Цена товара<component :is="point"/></label>
-        <the-mask type="text" required  placeholder="Введите цену" :mask="['# ###', '## ###', '### ###']" v-model="Product.priceProduct"/>
+        <the-mask type="text" required  placeholder="Введите цену" :mask="['#', '##', '###','# ###', '## ###', '### ###']" v-model="Product.priceProduct"/>
+        <p>{{nameError}}</p>
         <button type="submit" :disabled="buttonDisabled" @click="addToProducts(Product)">Добавить товар</button>
       </div>
     </form>
@@ -32,21 +33,31 @@
             imgSrc:'',
             priceProduct: '',
           },
+          nameError:'',
+        }
+      },
+
+      methods:{
+        addToProducts:function (Product) {
+          this.$store.dispatch('catalogStore/addProductState',Product)
+        },
+        ValidURL: function (str) {
+          let result = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+          return result.test(str);
         }
       },
       computed:{
         buttonDisabled(){
-          if (this.Product.nameProduct && this.Product.imgSrc && this.Product.priceProduct) {
-           return false;
+          if (this.Product.nameProduct && this.Product.imgSrc && this.Product.priceProduct && this.ValidURL(this.Product.imgSrc)) {
+            this.nameError = ''
+            return false;
           }
-           return true;
+          if(this.Product.imgSrc && !this.ValidURL(this.Product.imgSrc)){
+            this.nameError = 'Введите корректно ссылку на изображение'
+          }
+          return true;
         },
       },
-      methods:{
-        addToProducts:function (Product) {
-          this.$store.dispatch('catalogStore/addProductState',Product)
-        }
-      }
     }
 </script>
 
@@ -68,6 +79,15 @@
      color: #49485E;
      margin-bottom: 4px;
      width: 100%;
+  }
+  p{
+    font-size: 10px;
+    padding-top: 2px;
+    height: 5px;
+    line-height: 13px;
+    letter-spacing: -0.02em;
+    color: orangered;
+    margin: 0 !important;
   }
   textarea{
     height: 108px;
@@ -93,7 +113,7 @@
     width: 284px;
     height: 36px;
     border: none !important;
-    margin-top: 24px ;
+    margin-top: 17px ;
     background: #7BAE73;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
