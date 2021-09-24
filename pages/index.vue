@@ -22,7 +22,6 @@ export default {
   created: function () {
     this.$store.dispatch('catalogStore/refreshSavedState')
   }
-
 }
 </script>
 <style  lang="scss">
@@ -44,5 +43,10 @@ export default {
     line-height: 35px;
     color: #3F3F3F;
     float: left;
+  }
+  @media screen and (max-width: 400px) {
+    .background{
+      width: 1300px;
+    }
   }
 </style>

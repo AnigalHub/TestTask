@@ -15,7 +15,6 @@
       </div>
     </form>
   </div>
-
 </template>
 
 <script>
@@ -36,7 +35,6 @@
           nameError:'',
         }
       },
-
       methods:{
         addToProducts:function (Product) {
           this.$store.dispatch('catalogStore/addProductState',Product)

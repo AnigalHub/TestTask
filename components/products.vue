@@ -98,8 +98,13 @@
           font-family: 'Source Sans Pro', sans-serif;
         }
       }
-
     }
   }
-
+  @media screen and (max-width: 400px) {
+    #products .product {
+      width: 370px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
 </style>
