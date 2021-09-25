@@ -70,20 +70,19 @@
     background: #FFFEFB;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.04), 0 6px 10px rgba(0, 0, 0, 0.02);
   }
+  label,p{
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: -0.02em;
+  }
   label{
-     font-size: 10px;
-     line-height: 13px;
-     letter-spacing: -0.02em;
      color: #49485E;
      margin-bottom: 4px;
      width: 100%;
   }
   p{
-    font-size: 10px;
     padding-top: 2px;
     height: 5px;
-    line-height: 13px;
-    letter-spacing: -0.02em;
     color: orangered;
     margin: 0 !important;
   }
