@@ -49,12 +49,15 @@ export default {
       width: 1200px;
     }
   }
-  @media screen and (max-width: 350px) {
+  @media screen and (min-width: 240px)and (max-width: 350px)  {
     .background{
       width: 900px;
     }
   }
-  @media screen and (max-width: 250px) {
+  @media screen and (max-width: 240px) {
+    .background{
+      width: 300px;
+    }
     .block_2{
       flex-direction: row;
       display: block;
