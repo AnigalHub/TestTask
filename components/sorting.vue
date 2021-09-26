@@ -88,4 +88,14 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
+  @media screen and (min-width: 350px)and (max-width: 400px) {
+    .dropdown {
+      margin-left: 808px;
+    }
+  }
+  @media screen and (max-width: 350px) {
+    .dropdown {
+      margin-left: 608px;
+    }
+  }
 </style>

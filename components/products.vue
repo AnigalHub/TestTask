@@ -102,9 +102,18 @@
   }
   @media screen and (max-width: 400px) {
     #products .product {
-      width: 370px;
       margin-left: 20px;
       margin-right: 20px;
+    }
+  }
+  @media screen and (min-width: 350px) and (max-width: 400px) {
+    #products .product {
+      width: 370px;
+    }
+  }
+  @media screen and (max-width: 350px) {
+    #products .product {
+      width: 470px;
     }
   }
 </style>

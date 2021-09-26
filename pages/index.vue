@@ -5,7 +5,7 @@
          <h1>Добавление товара</h1>
          <sorting/>
        </div>
-       <div class="flex-container">
+       <div class="flex-container block_2">
          <form_submission/>
          <products/>
        </div>
@@ -44,9 +44,20 @@ export default {
     color: #3F3F3F;
     float: left;
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (min-width: 350px)and (max-width: 400px) {
     .background{
-      width: 1300px;
+      width: 1200px;
+    }
+  }
+  @media screen and (max-width: 350px) {
+    .background{
+      width: 900px;
+    }
+  }
+  @media screen and (max-width: 250px) {
+    .block_2{
+      flex-direction: row;
+      display: block;
     }
   }
 </style>
