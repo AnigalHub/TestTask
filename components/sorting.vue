@@ -98,4 +98,14 @@
       margin-left: 608px;
     }
   }
+  @media screen and (min-width: 1200px)and (max-width: 1350px) {
+    .dropdown {
+      margin-left: 850px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .dropdown {
+      margin-left: 600px;
+    }
+  }
 </style>

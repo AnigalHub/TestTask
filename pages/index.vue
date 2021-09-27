@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div id="index">
      <div class="background">
        <div class="flex-container">
          <h1>Добавление товара</h1>
@@ -26,7 +26,7 @@ export default {
 </script>
 <style  lang="scss">
   body{margin: 0 !important;}
-  .background{
+  #index{
     margin-left: auto;
     margin-right: auto;
     width: 1440px;
@@ -44,6 +44,7 @@ export default {
     color: #3F3F3F;
     float: left;
   }
+  /*
   @media screen and (min-width: 350px)and (max-width: 400px) {
     .background{
       width: 1200px;
@@ -61,6 +62,29 @@ export default {
     .block_2{
       flex-direction: row;
       display: block;
+    }
+  }*/
+
+</style>
+<style>
+  @media screen and (min-width: 1300px)and (max-width: 1455px) {
+    #index{
+      width: 1295px !important;
+    }
+  }
+  @media screen and (min-width: 1300px)and (max-width: 1350px) {
+    #index{
+      width: 1280px !important;
+    }
+  }
+  @media screen and (min-width: 1200px)and (max-width: 1300px) {
+    #index{
+      width: 1180px !important;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    #index{
+      width: 1050px !important;
     }
   }
 </style>

@@ -116,4 +116,27 @@
       width: 470px;
     }
   }
+  @media screen and (min-width: 1350px)and (max-width: 1455px) {
+    #products .product {
+      width: 290px;
+    }
+  }
+  @media screen and (min-width: 1300px)and (max-width: 1350px) {
+    #products .product {
+      width: 280px;
+    }
+  }
+  @media screen and (min-width: 1200px)and (max-width: 1300px) {
+    #products .product {
+      width: 255px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    #products .product {
+      width: 275px;
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-bottom: 20px;
+    }
+  }
 </style>
