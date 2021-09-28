@@ -84,7 +84,7 @@ export default {
   }
   @media screen and (max-width: 1200px) {
     #index{
-      width: 1050px !important;
+      width: 1040px !important;
     }
   }
 </style>
