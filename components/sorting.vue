@@ -47,24 +47,23 @@
     float: left;
     width: 121.49px;
     height: 36px;
-    background: #FFFEFB;
-    color: #B4B4B4;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
     border: none;
-    margin-top: 31px;
-    margin-left: 1008px;
+    margin: 31px 0 0 1008px;
     padding: 10px 5px 11px 16px;
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 12px;
     line-height: 15px;
     position: relative;
     display: inline-block;
     cursor: pointer;
-    svg{
-     margin-left: 5px;
-    }
+    svg{margin-left: 5px;}
   }
+    .dropdown,.dropdown-content div {
+      font-family: 'Source Sans Pro', sans-serif;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      background: #FFFEFB;
+      color: #B4B4B4;
+    }
   .dropdown-content {
     display: none;
     position: absolute;
@@ -75,37 +74,23 @@
     z-index: 1;
     div{
       width: 121.49px;
-      background: #FFFEFB;
-      color: #B4B4B4;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      border-radius: 4px;
-      font-family: 'Source Sans Pro', sans-serif;
       font-size: 11px;
       line-height: 15px;
       padding: 5px 16px;
     }
   }
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
+  .dropdown:hover .dropdown-content {display: block;}
+
   @media screen and (min-width: 350px)and (max-width: 400px) {
-    .dropdown {
-      margin-left: 808px;
-    }
+    .dropdown { margin-left: 808px;}
   }
   @media screen and (max-width: 350px) {
-    .dropdown {
-      margin-left: 608px;
-    }
+    .dropdown { margin-left: 608px;}
   }
   @media screen and (min-width: 1200px)and (max-width: 1350px) {
-    .dropdown {
-      margin-left: 850px;
-    }
+    .dropdown {margin-left: 850px;}
   }
   @media screen and (max-width: 1200px) {
-    .dropdown {
-      margin-left: 600px;
-    }
+    .dropdown {margin-left: 600px;}
   }
 </style>

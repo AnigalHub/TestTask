@@ -35,8 +35,7 @@ export default {
   .flex-container{display: flex;}
   h1{
     margin: 0 !important;
-    padding-top: 32px;
-    padding-left: 32px;
+    padding: 32px 0 0 32px;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 600;
     font-size: 28px;
@@ -46,19 +45,13 @@ export default {
   }
   /*
   @media screen and (min-width: 350px)and (max-width: 400px) {
-    .background{
-      width: 1200px;
-    }
+    .background{width: 1200px;}
   }
   @media screen and (min-width: 240px)and (max-width: 350px)  {
-    .background{
-      width: 900px;
-    }
+    .background{width: 900px;}
   }
   @media screen and (max-width: 240px) {
-    .background{
-      width: 300px;
-    }
+    .background{width: 300px;}
     .block_2{
       flex-direction: row;
       display: block;
@@ -68,23 +61,15 @@ export default {
 </style>
 <style>
   @media screen and (min-width: 1300px)and (max-width: 1455px) {
-    #index{
-      width: 1295px !important;
-    }
+    #index{width: 1295px !important;}
   }
   @media screen and (min-width: 1300px)and (max-width: 1350px) {
-    #index{
-      width: 1280px !important;
-    }
+    #index{width: 1280px !important;}
   }
   @media screen and (min-width: 1200px)and (max-width: 1300px) {
-    #index{
-      width: 1180px !important;
-    }
+    #index{width: 1180px !important;}
   }
   @media screen and (max-width: 1200px) {
-    #index{
-      width: 1040px !important;
-    }
+    #index{width: 1040px !important;}
   }
 </style>
