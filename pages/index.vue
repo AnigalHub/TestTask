@@ -69,7 +69,13 @@ export default {
   @media screen and (min-width: 1200px)and (max-width: 1300px) {
     #index{width: 1180px !important;}
   }
-  @media screen and (max-width: 1200px) {
+  @media screen and (min-width: 1100px) and (max-width: 1200px) {
     #index{width: 1040px !important;}
+  }
+  @media screen and (min-width: 1005px) and (max-width: 1100px) {
+    #index{width: 995px !important;}
+  }
+  @media screen and (max-width: 1005px) {
+    #index{width: 500px !important;}
   }
 </style>
