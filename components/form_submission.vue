@@ -115,10 +115,9 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     color: white;
-    font: 12px 600 'Inter', sans-serif;
-    //font-family: 'Inter', sans-serif;
-    //font-weight: 600;
-   // font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
     line-height: 15px;
   }
 </style>
