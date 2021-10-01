@@ -43,20 +43,6 @@ export default {
     color: #3F3F3F;
     float: left;
   }
-  /*
-  @media screen and (min-width: 350px)and (max-width: 400px) {
-    .background{width: 1200px;}
-  }
-  @media screen and (min-width: 240px)and (max-width: 350px)  {
-    .background{width: 900px;}
-  }
-  @media screen and (max-width: 240px) {
-    .background{width: 300px;}
-    .block_2{
-      flex-direction: row;
-      display: block;
-    }
-  }*/
 
 </style>
 <style>
