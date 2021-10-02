@@ -129,4 +129,9 @@
       margin-bottom: 20px;
     }
   }
+  @media screen and (max-width: 1005px) {
+    #products .product {
+      width: 250px !important;
+    }
+  }
 </style>
