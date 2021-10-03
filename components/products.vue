@@ -123,7 +123,7 @@
   }
   @media screen and (max-width: 1200px) {
     #products .product {
-      width: 275px;
+      width: 270px;
       margin-left: 15px;
       margin-right: 15px;
       margin-bottom: 20px;
@@ -131,7 +131,7 @@
   }
   @media screen and (max-width: 1005px) {
     #products .product {
-      width: 250px !important;
+      width: 300px !important;
     }
   }
 </style>

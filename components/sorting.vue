@@ -93,4 +93,7 @@
   @media screen and (max-width: 1200px) {
     .dropdown {margin-left: 580px;}
   }
+  @media screen and (max-width: 1005px) {
+    .dropdown {margin-left: 300px !important;}
+  }
 </style>

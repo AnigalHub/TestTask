@@ -59,9 +59,9 @@ export default {
     #index{width: 1040px !important;}
   }
   @media screen and (min-width: 1005px) and (max-width: 1100px) {
-    #index{width: 995px !important;}
+    #index{width: 990px !important;}
   }
   @media screen and (max-width: 1005px) {
-    #index{width: 500px !important;}
+    #index{width: 700px !important;}
   }
 </style>
