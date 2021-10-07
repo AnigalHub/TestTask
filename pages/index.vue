@@ -61,7 +61,16 @@ export default {
   @media screen and (min-width: 1005px) and (max-width: 1100px) {
     #index{width: 990px !important;}
   }
-  @media screen and (max-width: 1005px) {
+  @media screen and (min-width: 800px) and (max-width: 1005px) {
     #index{width: 700px !important;}
   }
+  @media screen and (min-width: 500px) and (max-width: 800px) {
+    #index{width: 500px !important;}
+    .block_2{flex-direction: column;}
+  }
+  @media screen  and (max-width: 500px) {
+    #index{width: 410px !important;}
+    .block_2{flex-direction: column;}
+  }
+
 </style>

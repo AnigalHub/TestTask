@@ -120,4 +120,8 @@
     font-size: 12px;
     line-height: 15px;
   }
+  @media screen and (max-width: 800px) {
+    form,input,textarea,button{width: 100%;}
+    form{width: 93%;}
+  }
 </style>

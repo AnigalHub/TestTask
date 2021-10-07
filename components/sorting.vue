@@ -87,13 +87,22 @@
   @media screen and (max-width: 350px) {
     .dropdown { margin-left: 608px;}
   }
+  @media screen and (min-width: 1350px)and (max-width: 1500px) {
+    .dropdown {margin-left: 800px;}
+  }
   @media screen and (min-width: 1200px)and (max-width: 1350px) {
-    .dropdown {margin-left: 850px;}
+    .dropdown {margin-left: 750px;}
   }
   @media screen and (max-width: 1200px) {
     .dropdown {margin-left: 580px;}
   }
-  @media screen and (max-width: 1005px) {
-    .dropdown {margin-left: 300px !important;}
+  @media screen and (min-width: 500px) and (max-width: 1005px) {
+    .dropdown {margin-left: 250px;}
+  }
+  @media screen and (max-width: 800px) {
+    .dropdown {margin-left: 40px;}
+  }
+  @media screen and (max-width: 500px) {
+    .dropdown {margin-left: 0; float: right}
   }
 </style>

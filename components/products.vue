@@ -123,15 +123,24 @@
   }
   @media screen and (max-width: 1200px) {
     #products .product {
-      width: 270px;
       margin-left: 15px;
       margin-right: 15px;
       margin-bottom: 20px;
+      width: 270px ;
     }
   }
-  @media screen and (max-width: 1005px) {
-    #products .product {
-      width: 300px !important;
-    }
+  @media screen and (min-width: 850px) and (max-width: 1005px) {
+    #products .product {width: 300px;}
   }
+  @media screen  and (max-width: 800px) {
+    #products .product:nth-child(odd) {margin-left: 50px;}
+    #products {width: 500px;}
+    #products .product {width: 200px;}
+  }
+  @media screen  and (max-width: 500px) {
+    #products .product {margin-left: 55px !important;}
+    #products .product {width: 65%;}
+  }
+
+
 </style>
