@@ -72,5 +72,4 @@ export default {
     #index{width: 410px !important;}
     .block_2{flex-direction: column;}
   }
-
 </style>
