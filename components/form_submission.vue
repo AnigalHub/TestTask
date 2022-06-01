@@ -70,7 +70,7 @@
     background: #FFFEFB;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.04), 0 6px 10px rgba(0, 0, 0, 0.02);
   }
-  label,p{
+  label, p{
     font-size: 10px;
     line-height: 13px;
     letter-spacing: -0.02em;
@@ -90,7 +90,7 @@
     height: 108px;
     max-height: 108px;
   }
-  input,textarea{
+  input, textarea{
     padding: 10px 16px 11px;
     border: none !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -98,9 +98,9 @@
     line-height: 15px;
     width: 284px;
   }
-  label,input,textarea{font-family: 'Source Sans Pro', sans-serif;}
+  label, input, textarea{font-family: 'Source Sans Pro', sans-serif;}
   svg{margin-bottom: 13px;}
-  form,input,textarea{border-radius: 4px;}
+  form, input, textarea{border-radius: 4px;}
   button[disabled]{
     background: #EEEEEE;
     box-shadow: none !important;
