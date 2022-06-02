@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'test_task',
+    title: 'Страница продажи товаров',
     htmlAttrs: {
       lang: 'en'
     },
@@ -16,6 +16,11 @@ export default {
       {rel: 'stylesheet' , href:'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swa', media:'all', disabled:''},
 
     ]
+  },
+
+  //Router
+  router: {
+    base: '/testtask/'
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
