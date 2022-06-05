@@ -102,7 +102,4 @@
   @media screen and (max-width: 800px) {
     .dropdown {margin-left: 40px;}
   }
-  @media screen and (max-width: 500px) {
-    .dropdown {margin-left: 0; float: right}
-  }
 </style>
