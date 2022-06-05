@@ -63,7 +63,7 @@
   form{
     position: sticky;
     top: 24px;
-    margin: 16px 16px 0 32px;
+    margin: 16px;
     padding: 24px;
     width: 332px;
     height: 440px;
