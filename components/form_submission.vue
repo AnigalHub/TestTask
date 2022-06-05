@@ -11,7 +11,7 @@
         <label>Цена товара<component :is="point"/></label>
         <the-mask type="text" required  placeholder="Введите цену" :mask="['#', '##', '###','# ###', '## ###', '### ###']" v-model="Product.priceProduct"/>
         <p>{{nameError}}</p>
-        <button type="submit" :disabled="buttonDisabled" @click="addToProducts(Product)">Добавить товар</button>
+        <button type="submit" :disabled="buttonDisabled" @click.prevent="addToProducts(Product)">Добавить товар</button>
       </div>
     </form>
   </div>
