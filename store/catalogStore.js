@@ -31,7 +31,7 @@ export const actions = {
     let newProducts = JSON.parse(localStorage.getItem('product'));
     console.log({newProducts})
 
-    if(newProducts !== undefined && newProducts.length !== 0)
+    if(newProducts && newProducts.length !== 0)
       context.commit('setSavedProducts',newProducts)
 
     if (context.getters.Products.length === 0){
