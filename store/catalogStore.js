@@ -1,8 +1,8 @@
 const defaultProduct = {
-  nameProduct:'Камера',
+  nameProduct:'Фотоаппарат',
   imgSrc:'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
-  priceProduct:'123',
-  descriptionProduct:'ЛАЛВП'
+  priceProduct:'25000',
+  descriptionProduct:'Фотоаппарат мгновенной печати Polaroid Now, белый, 10 Мпикс, макс. разрешение снимков 1440x900'
 }
 export const state = () =>({
     products: [],
