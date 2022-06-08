@@ -1,5 +1,11 @@
+const defaultProduct = {
+  nameProduct:'Камера',
+  imgSrc:'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80',
+  priceProduct:'123',
+  descriptionProduct:'ЛАЛВП'
+}
 export const state = () =>({
-    products: []
+    products: [],
   }
 )
 export  const  mutations ={
@@ -23,9 +29,14 @@ export const actions = {
     if (!process.browser)
       return;
     let newProducts = JSON.parse(localStorage.getItem('product'));
-    console.log(newProducts)
-    if(newProducts)
+    console.log({newProducts})
+
+    if(newProducts !== undefined && newProducts.length !== 0)
       context.commit('setSavedProducts',newProducts)
+
+    if (context.getters.Products.length === 0){
+      context.commit('addProduct',defaultProduct)
+    }
   },
   addProductState(context,product){
     context.commit('addProduct',product)
